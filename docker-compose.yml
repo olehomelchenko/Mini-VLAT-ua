@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: 
+      context: ./ReactTool/frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./ReactTool/frontend:/app
+      - /app/node_modules
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:8000
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./ReactTool/backend
+    ports:
+      - "8000:5000"
+    volumes:
+      - ./ReactTool/backend:/app
+      - ./data/surveys/quiz:/app/surveys/quiz
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+      - PYTHONUNBUFFERED=1
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -13,11 +13,13 @@ import secrets
 import pandas as pd
 import db_conf
 from flask import send_file
+from flask_cors import CORS
 #from flask_mail import Mail, Message
 #import firebase_admin
 #from firebase_admin import credentials, firestore, initialize_app, firebase
 
 app = Flask(__name__, static_folder='../frontend/build', static_url_path='/')
+CORS(app)  # Add this line
 app.config['MYSQL_DATABASE_HOST'] = db_conf.host
 app.config['MYSQL_DATABASE_USER'] = db_conf.user
 app.config['MYSQL_DATABASE_PASSWORD'] = db_conf.password

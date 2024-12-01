@@ -178,7 +178,7 @@ class VisQuiz extends Component {
 
     on_survey_click() {
 
-        fetch('./record_responses_to_db', {
+        fetch('http://localhost:8000/record_responses_to_db', {
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
             method: 'POST',
             body: JSON.stringify({
