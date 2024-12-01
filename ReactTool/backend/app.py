@@ -14,12 +14,17 @@ import pandas as pd
 import db_conf
 from flask import send_file
 from flask_cors import CORS
+from tinydb import TinyDB
 #from flask_mail import Mail, Message
 #import firebase_admin
 #from firebase_admin import credentials, firestore, initialize_app, firebase
 
 app = Flask(__name__, static_folder='../frontend/build', static_url_path='/')
 CORS(app)  # Add this line
+
+db = TinyDB('/app/data/responses.json')
+responses_table = db.table('responses')
+
 app.config['MYSQL_DATABASE_HOST'] = db_conf.host
 app.config['MYSQL_DATABASE_USER'] = db_conf.user
 app.config['MYSQL_DATABASE_PASSWORD'] = db_conf.password
@@ -105,10 +110,11 @@ def record_responses_to_db():
     # msg = Message("Quiz Response for " + str(session_id),sender='minivlat@gmail.com', recipients=['minivlat@gmail.com'])
     # msg.body = data_send
     # mail.send(msg)
-    fname = str(session_id)+'.txt'
-    fname = './surveys/quiz/' + fname
-    with open(fname, 'w+') as test:
-        test.write(json.dumps(data) + "\n")
+    # fname = str(session_id)+'.txt'
+    # fname = './surveys/quiz/' + fname
+    responses_table.insert(data)
+    # with open(fname, 'w+') as test:
+    #     test.write(json.dumps(data) + "\n")
 
     print('TODO: Record quiz responses into a file or DB')
     print('Collected quiz data: ', data)

@@ -6,10 +6,10 @@ COPY Pipfile Pipfile.lock ./
 
 RUN pip install pipenv && \
     pipenv install --system --deploy && \
-    pip install flask-cors
+    pip install flask-cors tinydb
 
-# Create necessary directories for data storage
-RUN mkdir -p /app/surveys/quiz
+# Create directory for database
+RUN mkdir -p /app/data
 
 COPY . .
 
