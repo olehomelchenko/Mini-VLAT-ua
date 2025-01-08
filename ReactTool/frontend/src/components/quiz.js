@@ -1,6 +1,6 @@
 const questions = [
     {
-        question: "What was the price range of a barrel of oil in 2020?",
+        question: "Яким був ціновий діапазон бареля нафти у 2020 році?",
         optionA: "$16.55 - $57.52",
         optionB: "$19.52 - $59.00",
         optionC: "$23.43 - $60.72",
@@ -9,7 +9,7 @@ const questions = [
     },
 
     {
-        question: "What is the range of the average internet speed in Asia?",
+        question: "Який діапазон середньої швидкості інтернету в Азії?",
         optionA: "5.50Mbps - 30.60Mbps",
         optionB: "7.00Mbps - 29.40Mbps",
         optionC: "6.40Mbps - 27.38Mbps",
@@ -17,7 +17,7 @@ const questions = [
         correctOption: "optionD",
     },
     {
-        question: "What is the cost of peanuts in Las Vegas?",
+        question: "Яка ціна арахісу в Лас Веґасі?",
         optionA: "$9.0",
         optionB: "$6.1",
         optionC: "$10.3",
@@ -26,7 +26,7 @@ const questions = [
     },
 
     {
-        question: "What is the approval rating of Republicans among the people who have the education level of Postgraduate Study?",
+        question: "Який рейтинг схвалення республіканців серед людей, які мають освітній рівень післядипломної освіти?",
         optionA: "35%",
         optionB: "27%",
         optionC: "23%",
@@ -35,7 +35,7 @@ const questions = [
     },
 
     {
-        question: "About what is the global smartphone market share of Samsung?",
+        question: "Яку приблизно частку ринку смартфонів займає Samsung?",
         optionA: "20%",
         optionB: "25%",
         optionC: "30%",
@@ -44,7 +44,7 @@ const questions = [
     },
 
     {
-        question: "How many people have rated the taxi between 4.2 and 4.4?",
+        question: "Скільки людей оцінили таксі рейтингом між 4.2 та 4.4?",
         optionA: "270",
         optionB: "190",
         optionC: "300",
@@ -53,7 +53,7 @@ const questions = [
     },
 
     {
-        question: "There is a negative linear relationship between the height and the weight of the 85 males.",
+        question: "Існує негативна лінійна залежність між ростом і вагою 85 чоловіків.",
         optionA: "True",
         optionB: "False",
         optionC: "",
@@ -62,7 +62,7 @@ const questions = [
     },
 
     {
-        question: "What was the average price of a pound of coffee beans in September 2013?",
+        question: "Якою була середня ціна фунту кавових бобів в вересні 2013?",
         optionA: "$5.15",
         optionB: "$6.2",
         optionC: "$4.8",
@@ -71,7 +71,7 @@ const questions = [
     },
 
     {
-        question: "What was the number of girls named 'Olivia' in 2010 in the UK?",
+        question: "Яку кількість дівчаток назвали «Олівія» у 2010 році у Великобританії?",
         optionA: "2000",
         optionB: "2500",
         optionC: "1700",
@@ -80,7 +80,7 @@ const questions = [
     },
 
     {
-        question: "What is the total length of the metro system in Beijing?",
+        question: "Яка загальна протяжність системи метро в Пекіні?",
         optionA: "525 km",
         optionB: "495 km",
         optionC: "305 km",
@@ -89,7 +89,7 @@ const questions = [
     },
 
     {
-        question: "In 2015, the unemployment rate for Washington (WA) was higher than that of Wisconsin (WI)",
+        question: "У 2015 році рівень безробіття у Вашингтоні (WA) був вищим, ніж у Вісконсині (WI).",
         optionA: "True",
         optionB: "False",
         optionC: "",
@@ -98,7 +98,7 @@ const questions = [
     },
 
     {
-        question: "For which website was the number of unique visitors the largest in 2010?",
+        question: "Для якого сайту кількість унікальних відвідувачів була найбільшою в 2010 році?",
         optionA: "Amazon",
         optionB: "Chase",
         optionC: "PayPal",

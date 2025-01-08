@@ -34,18 +34,94 @@ import img12 from '../components/data/VLAT-Pics/LineChart.png'
 
 
 let minivis = [
-    { 'vis': BarChartMini, 'type': 'Bar Chart', 'question': 'What is the average internet speed in Japan?', 'options': ["42.30 Mbps", "40.51 Mbps", "35.25 Mbps", "16.16 Mbps", "Skip"], 'correct_answer': 1, 'cimage': img9 },
-    { 'vis': AreaChartMini, 'type': 'Area Chart', 'question': 'What was the average price of pount of coffee beans in October 2019?', 'options': ["$0.71", "$0.90", "$0.80", "$0.63", "Skip"], 'correct_answer': 0, 'cimage': img10 },
-    { 'vis': BubbleChartMini, 'type': 'Bubble Chart', 'question': 'Which city\'s metro system has the largest number of stations?', 'options': ['Beijing', 'Shanghai', 'London', 'Seoul', "Skip"], 'correct_answer': 1, 'cimage': img3 },
-    { 'vis': ChoroplethMini, 'type': 'Choropleth', 'question': 'In 2020, the unemployment rate for Washington (WA) was higher than that of Wisconsin (WI).', 'options': ['True', 'False', "Skip"], 'correct_answer': 0, 'cimage': img8 },
-    { 'vis': HistogramMini, 'type': 'Histogram', 'question': 'What distance have customers traveled in the taxi the most?', 'options': ["60 - 70 Km", "30 - 40 Km", "20 - 30 Km", "50 - 60 Km", "Skip"], 'correct_answer': 1, 'cimage': img6 },
-    { 'vis': LineChartMini, 'type': 'Line Chart', 'question': 'What was the price of a barrel of oil in February 2020?', 'options': ["$50.54", "$47.02", "$42.34", "$42.34", "Skip"], 'correct_answer': 0, 'cimage': img12 },
-    { 'vis': TreeMapMini, 'type': 'Treemap', 'question': 'eBay is nested in the Software category.', 'options': ['True', 'False', 'Skip'], 'correct_answer': 1, 'cimage': img4 },
-    { 'vis': ScatterPlotMini, 'type': 'Scatterplot', 'question': 'There is a negative linear relationship between the height and the weight of the 85 males.', 'options': ['True', 'False', 'Skip'], 'correct_answer': 1, 'cimage': img1 },
-    { 'vis': StackedBarChartMini, 'type': '100% Stacked Bar', 'question': 'Which country has the lowest proportion of Gold medals?', 'options': ["Great Britain", "U.S.A.", "Japan", "Australia", 'Skip'], 'correct_answer': 0, 'cimage': img5 },
-    { 'vis': StackedAreaPlotMini, 'type': 'Stacked Area', 'question': 'What was the ratio of girls named \'Isla\' to girls named \'Amelia\' in 2012 in the UK?', 'options': ["1 to 1", "1 to 2", "1 to 3", "1 to 4", "Skip"], 'correct_answer': 1, 'cimage': img7 },
-    { 'vis': StackedBarChart2Mini, 'type': 'Stacked Bar', 'question': 'What is the cost of peanuts in Seoul?', 'options': ["$6.1", "$5.2", "$7.5", "$4.5", "Skip"], 'correct_answer': 0, 'cimage': img2 },
-    { 'vis': PieChartMini, 'type': 'Pie Chart', 'question': 'What is the approximate global smartphone market share of Samsung?', 'options': ["17.6%", "25.3%", "10.9%", "35.2%", 'Skip'], 'correct_answer': 0, 'cimage': img11 }
+    { 
+        'vis': LineChartMini, 
+        'type': 'Лінійна діаграма', 
+        'question': 'Яким був ціновий діапазон бареля нафти у 2020 році?', 
+        'options': ["$16.55 - $57.52", "$19.52 - $59.00", "$23.43 - $60.72", "$21.82 - $87.52", "Пропустити"], 
+        'correct_answer': 0, 
+        'cimage': img12 
+    },
+    { 
+        'vis': BarChartMini, 
+        'type': 'Стовпчикова діаграма (Bar Chart)', 
+        'question': 'Який діапазон середньої швидкості інтернету в Азії?', 
+        'options': ["5.50Mbps - 30.60Mbps", "7.00Mbps - 29.40Mbps", "6.40Mbps - 27.38Mbps", "5.50Mbps - 28.60Mbps", "Пропустити"], 
+        'correct_answer': 3, 
+        'cimage': img9 
+    },
+    { 
+        'vis': StackedBarChart2Mini, 
+        'type': 'Накопичувальна стовпчикова діаграма (Stacked Bar)', 
+        'question': 'Яка ціна арахісу в Лас Веґасі?', 
+        'options': ["$9.0", "$6.1", "$10.3", "$4.3", "Пропустити"], 
+        'correct_answer': 1, 
+        'cimage': img2 
+    },
+    { 
+        'vis': PieChartMini, 
+        'type': 'Кругова діаграма (Pie Chart)', 
+        'question': 'Яку приблизно частку ринку смартфонів займає Samsung?', 
+        'options': ["20%", "25%", "30%", "15%", "Пропустити"], 
+        'correct_answer': 1, 
+        'cimage': img11 
+    },
+    { 
+        'vis': HistogramMini, 
+        'type': 'Гістограма (Histogram)', 
+        'question': 'Скільки людей оцінили таксі рейтингом між 4.2 та 4.4?', 
+        'options': ["270", "190", "300", "290", "Пропустити"], 
+        'correct_answer': 1, 
+        'cimage': img6 
+    },
+    { 
+        'vis': ScatterPlotMini, 
+        'type': 'Точкова діаграма (Scatterplot)', 
+        'question': 'Існує негативна лінійна залежність між ростом і вагою 85 чоловіків.', 
+        'options': ['True', 'False', "Пропустити"], 
+        'correct_answer': 1, 
+        'cimage': img1 
+    },
+    { 
+        'vis': AreaChartMini, 
+        'type': 'Площинна діаграма (Area Chart)', 
+        'question': 'Якою була середня ціна фунту кавових бобів в вересні 2013?', 
+        'options': ["$5.15", "$6.2", "$4.8", "$4.3", "Пропустити"], 
+        'correct_answer': 0, 
+        'cimage': img10 
+    },
+    {
+        'vis': StackedAreaPlotMini, 
+        'type': 'Накопичувальна площинна діаграма (Stacked Area)', 
+        'question': 'Яку кількість дівчаток назвали «Олівія» у 2010 році у Великобританії?', 
+        'options': ["2000", "2500", "1700", "2400", "Пропустити"], 
+        'correct_answer': 2, 
+        'cimage': img7 
+    },
+    { 
+        'vis': BubbleChartMini, 
+        'type': 'Бульбашкова діаграма (Bubble Chart)', 
+        'question': 'Яка загальна протяжність системи метро в Пекіні?', 
+        'options': ["525 км", "495 км", "305 км", "475 км", "Пропустити"], 
+        'correct_answer': 0, 
+        'cimage': img3 
+    },
+    { 
+        'vis': ChoroplethMini, 
+        'type': 'Хороплетна мапа (Choropleth)', 
+        'question': 'У 2015 році рівень безробіття у Вашингтоні (WA) був вищим, ніж у Вісконсині (WI).', 
+        'options': ['Вірно', 'Невірно', "Пропустити"], 
+        'correct_answer': 0, 
+        'cimage': img8 
+    },
+    { 
+        'vis': TreeMapMini, 
+        'type': 'Деревоподібна діаграма (Treemap)', 
+        'question': 'Для якого сайту кількість унікальних відвідувачів була найбільшою в 2010 році?', 
+        'options': ["Amazon", "Chase", "PayPal", "Citibank", "Пропустити"], 
+        'correct_answer': 3, 
+        'cimage': img4 
+    }
 ];
 
 var record_ques = {}
@@ -143,13 +219,13 @@ class VisQuiz extends Component {
         score_2 = this.state.mini_score
 
         if (response === minivis[this.state.current_mini_index]['options'][truth]) {
-            record_ques[type] = 'Correct'
+            record_ques[type] = '✅ Вірно'
         }
         else if (response === 'Skip') {
-            record_ques[type] = 'Skip'
+            record_ques[type] = '⏩ Пропущено'
         }
         else {
-            record_ques[type] = 'Wrong'
+            record_ques[type] = '❌ Невірно'
         }
         console.log("The dictionary is: ", record_ques)
     }
@@ -212,7 +288,7 @@ class VisQuiz extends Component {
         this.props.history.push(pageType)
     }
     timeout() {
-        alert("Time is up! Please select 'Ok' to proceed to the next question.")
+        alert('Чакс вийшов! Натисніть "ОК" щоб перейти до наступного запитання.')
         this.setState({
             current_visualization_index: this.state.current_visualization_index + 1,
         })
@@ -221,7 +297,7 @@ class VisQuiz extends Component {
         return Math.random();
     }
     minitimeout() {
-        alert("Time is up! Please select 'Ok' to proceed to the next question.")
+        alert('Чакс вийшов! Натисніть "ОК" щоб перейти до наступного запитання.')
         this.setState({
             current_mini_index: this.state.current_mini_index + 1,
         })
@@ -236,7 +312,7 @@ class VisQuiz extends Component {
 
         if (this.props.location.state == undefined) {
             window.location.href = "/";
-            return (<p>Unknown session. Please start from the <a href={'/'}> consent page</a></p>)
+            return (<p>Невизначена сесія. Будь ласка поверніться на <a href={'/'}> сторінку згоди</a></p>)
         }
         let ages = []
         for (var i = 18; i < 100; i++) {
@@ -265,7 +341,7 @@ class VisQuiz extends Component {
                         <Col lg={6} className={'quiz-column'}>
                             <div className='timeStamp'>
                                 <Countdown date={Date.now() + 25000} renderer={({ minutes, seconds, completed }) => {
-                                    return <span>Time Remaining: {minutes}:{seconds}</span>;
+                                    return <span>Залишилось часу: {minutes}:{seconds}</span>;
                                 }} autoStart={true} key={Date.now()} onComplete={() => this.minitimeout()} />
                                 {/* <CountDownTimer hoursMinSecs={hoursMinSecs} /> */}
                             </div>
@@ -295,7 +371,7 @@ class VisQuiz extends Component {
 
 
                             <Form.Group className={'question'}>
-                                <Form.Label>Please select your age.</Form.Label>
+                                <Form.Label>Будь ласка вкажіть свій вік.</Form.Label>
                                 <Form.Select as="select" id={'age'} onChange={this.handleDemographicChange.bind(this)}>
                                     <option value={null} selected={true} disabled={true}></option>
                                     {ages.map((d, i) => (
@@ -306,54 +382,54 @@ class VisQuiz extends Component {
                             <hr />
 
                             <Form.Group className={'question'}>
-                                <Form.Label>Please select your gender.</Form.Label>
+                                <Form.Label>Будь ласка вкажіть ваш ґендер.</Form.Label>
                                 <Form.Select as="select" id={'sex'} onChange={this.handleDemographicChange.bind(this)}>
                                     <option value={null} selected={true} disabled={true}></option>
-                                    <option key={'male'} value={'male'}>Male</option>
-                                    <option key={'female'} value={'female'}>Female</option>
-                                    <option key={'other'} value={'other'}>Other</option>
-                                    <option key={'withdraw'} value={'withdraw'}>I do not wish to disclose.</option>
+                                    <option key={'male'} value={'male'}>Чоловік</option>
+                                    <option key={'female'} value={'female'}>Жінка</option>
+                                    <option key={'other'} value={'other'}>Небінарна персона</option>
+                                    <option key={'withdraw'} value={'withdraw'}>Не хочу розголошувати цю інформацію</option>
                                 </Form.Select>
                             </Form.Group>
                             <hr />
 
                             <Form.Group className={'question'}>
-                                <Form.Label>Please select your highest level of completed education.</Form.Label>
+                                <Form.Label>Будь ласка, оберіть ваш найвищий рівень завершеної освіти.</Form.Label>
                                 <Form.Select as="select" id={'education'} onChange={this.handleDemographicChange.bind(this)}>
                                     <option value={null} selected={true} disabled={true}></option>
-                                    <option value={'highschool'}>High School Diploma / GED</option>
-                                    <option value={'associate'}>Associate Degree</option>
-                                    <option value={'bachelors'}>Bachelors Degree</option>
-                                    <option value={'masters'}>Masters Degree</option>
-                                    <option value={'doctorate'}>Doctorate Degree</option>
+                                    <option value={'highschool'}>Повна загальна середня освіта</option>
+                                    <option value={'associate'}>Фахова передвища освіта</option>
+                                    <option value={'bachelors'}>Бакалаврський ступінь</option>
+                                    <option value={'masters'}>Магістерський ступінь</option>
+                                    <option value={'doctorate'}>Докторський ступінь</option>
                                 </Form.Select>
                             </Form.Group>
                             <hr />
                             <Form.Group className={'question'}>
-                                <Form.Label>Are you color-blind?</Form.Label>
+                                <Form.Label>Чи маєте ви колірну сліпоту (дальтонізм)?</Form.Label>
                                 <Form.Select as="select" id={'color-blind'} onChange={this.handleDemographicChange.bind(this)}>
                                     <option value={null} selected={true} disabled={true}></option>
-                                    <option value={'yes'}>Yes</option>
-                                    <option value={'no'}>No</option>
-                                    <option value={'maybe'}>I do not wish to disclose.</option>
+                                    <option value={'yes'}>Так</option>
+                                    <option value={'no'}>Ні</option>
+                                    <option value={'maybe'}>Не хочу розголошувати цю інформацію</option>
                                 </Form.Select>
                             </Form.Group>
                             <hr />
 
                             <Form.Group className={'question'}>
-                                <Form.Label>Please select your familiarity with visualization.</Form.Label>
+                                <Form.Label>Будь ласка опишіть ваш досвід з візуалізацією даних.</Form.Label>
                                 <Form.Select as="select" id={'familiarity'} onChange={this.handleDemographicChange.bind(this)}>
                                     <option value={null} selected={true} disabled={true}></option>
-                                    <option value={'not_familiar'}>I have never created a visualization.</option>
-                                    <option value={'somewhat'}>I am somewhat familiar.</option>
-                                    <option value={'very_familiar'}>I have created visualization systems before. </option>
+                                    <option value={'not_familiar'}>Я ніколи не працював професійно з візуалізацією даних</option>
+                                    <option value={'somewhat'}>Я дещо знайомий з візуалізацією даних</option>
+                                    <option value={'very_familiar'}>Я створював візуалізації даних самостійно</option>
                                 </Form.Select>
                             </Form.Group>
                             <hr />
 
 
                             <Form.Group>
-                                <Form.Label>Please include any additional comments below. (optional)</Form.Label>
+                                <Form.Label>(опціонально) Будь ласка, залиште коментар якщо бажаєте.</Form.Label>
                                 <Form.Control as="textarea" id={'comments'} rows={3} onChange={this.handleTextChange.bind(this)}>
                                 </Form.Control>
                             </Form.Group>
@@ -365,7 +441,7 @@ class VisQuiz extends Component {
                                 onClick={this.on_survey_click.bind(this)}
                                 disabled={(this.state.form_incomplete || this.state.demographics_incomplete)}
                                 id={'survey_submit-btn'}>
-                                Submit Responses
+                                Відправити відповіді
                             </Button></div>
 
                             <p className={'text-box'}></p>
