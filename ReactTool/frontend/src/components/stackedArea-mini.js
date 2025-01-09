@@ -123,7 +123,7 @@ class StackedAreaPlotMini extends Component {
                     .attr("x", 0 - (height / 1.9))
                     .attr("dy", "1em")
                     .style("text-anchor", "middle")
-                    .text("Number of Girls")
+                    .text("Кількість дівчат")
                     .style("font-weight", "bold")
                     .style('font-size', function () {
                         if (width < 500) {
@@ -143,7 +143,7 @@ class StackedAreaPlotMini extends Component {
                     })
                     .style("text-anchor", "middle")
                     .style("font-weight", "bold")
-                    .text("Year")
+                    .text("Рік")
 
                 const areaChart = svg.append('g')
                     .attr("clip-path", "url(#clip)")
@@ -276,7 +276,7 @@ class StackedAreaPlotMini extends Component {
                     .attr("fill", "#3182bd")
 
                 svg.append("text")
-                    .text("Olivia")
+                    .text("Олівія")
                     .attr("x", function () {
                         if (width < 500 && width > 400) {
                             return width + (2 * width / margin.left) + length / 25;
@@ -296,7 +296,7 @@ class StackedAreaPlotMini extends Component {
                     .attr("class", "legend-value")
 
                 svg.append("text")
-                    .text("Isla")
+                    .text("Айле")
                     .attr("x", function () {
                         if (width < 500 && width > 400) {
                             return width + (2 * width / margin.left) + length / 25;
@@ -317,7 +317,7 @@ class StackedAreaPlotMini extends Component {
                     .attr("class", "legend-value")
 
                 svg.append("text")
-                    .text("Amelia")
+                    .text("Амелія")
                     .attr("x", function () {
                         if (width < 500 && width > 400) {
                             return width + (2 * width / margin.left) + length / 25;
@@ -349,7 +349,7 @@ class StackedAreaPlotMini extends Component {
                         }
                     })
                     .attr("y", -length / margin.top)    // +20 to adjust position (lower)
-                    .text("Popular Girls' names in the UK")
+                    .text("Популярні жіночі імена в Великій Британії")
                     .attr("fill", "black")
                     .style("font-weight", "bold")
             })

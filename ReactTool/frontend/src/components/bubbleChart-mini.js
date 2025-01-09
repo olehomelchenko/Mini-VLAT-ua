@@ -191,7 +191,7 @@ class BubbleChartMini extends Component {
                         }
                     })
                     .style("font-weight", "bold")
-                    .text("Ridership")
+                    .text("Пасажиропотік")
 
                 svg.append("text")
                     .attr("class", "legend-title")
@@ -212,7 +212,7 @@ class BubbleChartMini extends Component {
                         }
                     })
                     .style("font-weight", "bold")
-                    .text("(bn per year)")
+                    .text("(млрд/рік)")
 
                 svg
                     .selectAll("legend")
@@ -339,7 +339,7 @@ class BubbleChartMini extends Component {
                     .attr("x", 0 - (height / 1.9))
                     .attr("dy", "1em")
                     .style("text-anchor", "middle")
-                    .text("Total System Length (Km)")
+                    .text("Загальна протяжність системи (км)")
                     .style("font-weight", "bold")
 
                 svg.append("text")
@@ -354,14 +354,14 @@ class BubbleChartMini extends Component {
                     })
                     .style("text-anchor", "middle")
                     .style("font-weight", "bold")
-                    .text("Number of Stations")
+                    .text("Кількість станцій")
 
                 svg
                     .append("text")
                     .attr("class", "title")
                     .attr("x", width / 3)
                     .attr("y", -length / margin.top)    // +20 to adjust position (lower)
-                    .text("Metro Systems of the World")
+                    .text("Системи метро у світі")
                     .attr("fill", "black")
                     .style("font-weight", "bold")
             })

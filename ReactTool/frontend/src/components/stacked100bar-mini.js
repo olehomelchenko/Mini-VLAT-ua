@@ -152,7 +152,7 @@ class StackedBarChartMini extends Component {
                     .attr("x", 0 - (height / 1.9))
                     .attr("dy", "1em")
                     .style("text-anchor", "middle")
-                    .text("Olympic Medals (%)")
+                    .text("Олімпійські Медалі (%)")
                     .style("font-weight", "bold")
 
                 svg.append("text")
@@ -167,7 +167,7 @@ class StackedBarChartMini extends Component {
                     })
                     .style("text-anchor", "middle")
                     .style("font-weight", "bold")
-                    .text("Countries")
+                    .text("Країни")
 
                 //var legend = svg.append('g').attr('class', 'legend').attr('transform', 'translate(' + (margin.left/2) + ',0)');
 
@@ -274,7 +274,7 @@ class StackedBarChartMini extends Component {
                     .attr("fill", "#feb24c")
 
                 svg.append("text")
-                    .text("Bronze")
+                    .text("Бронза")
                     .attr("x", function () {
                         if (width < 500 && width > 400) {
                             return width + (5.5 * width / margin.left)
@@ -300,7 +300,7 @@ class StackedBarChartMini extends Component {
                     .attr("class", "legend-value")
 
                 svg.append("text")
-                    .text("Silver")
+                    .text("Срібло")
                     .attr("x", function () {
                         if (width < 500 && width > 400) {
                             return width + (5.5 * width / margin.left)
@@ -326,7 +326,7 @@ class StackedBarChartMini extends Component {
                     .attr("class", "legend-value")
 
                 svg.append("text")
-                    .text("Gold")
+                    .text("Золото")
                     .attr("x", function () {
                         if (width < 500 && width > 400) {
                             return width + (5.5 * width / margin.left)
@@ -363,7 +363,7 @@ class StackedBarChartMini extends Component {
                         }
                     })
                     .attr("y", -length / margin.top)    // +20 to adjust position (lower)
-                    .text("Tokyo 2020 Olympics Performance Summary")
+                    .text("Підсумок Олімпіади 2020 в Токіо")
                     .attr("fill", "black")
                     .style("font-weight", "bold")
 

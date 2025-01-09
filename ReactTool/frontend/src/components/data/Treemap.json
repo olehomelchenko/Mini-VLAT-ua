@@ -1,7 +1,7 @@
 {
   "children": [
     {
-      "name": "Search/Portal",
+      "name": "Пошук/Портал",
       "children": [
         {
           "name": "Google",
@@ -31,7 +31,7 @@
       "colname": "level2"
     },
     {
-      "name": "Social Network",
+      "name": "Соцмережа",
       "children": [
         {
           "name": "Facebook",
@@ -61,7 +61,7 @@
       "colname": "level2"
     },
     {
-      "name": "Software",
+      "name": "Програмне забезпечення",
       "children": [
         {
           "name": "Mozilla",
@@ -97,7 +97,7 @@
       "colname": "level2"
     },
     {
-      "name": "Retail",
+      "name": "Онлайн-магазини",
       "children": [
         {
           "name": "eBay",
@@ -133,7 +133,7 @@
       "colname": "level2"
     },
     {
-      "name": "Computer",
+      "name": "Копмʼютери",
       "children": [
         {
           "name": "Apple",

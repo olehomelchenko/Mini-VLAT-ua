@@ -200,7 +200,7 @@ class TreeMapMini extends Component {
                 .attr("class", "title")
                 .attr("x", width / margin.left)
                 .attr("y", -length / margin.top)    // +20 to adjust position (lower)
-                .text("The Number of Unique Visitors for Websites")
+                .text("Кількість унікальних відвідувачів вебсайтів")
                 .attr("fill", "black")
                 .style("font-weight", "bold")
 

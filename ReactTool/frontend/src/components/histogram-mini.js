@@ -146,7 +146,7 @@ class HistogramMini extends Component {
                     .attr("x", - (height / 1.9))
                     .attr("dy", "1em")
                     .style("text-anchor", "middle")
-                    .text("Number of Customers")
+                    .text("Кількість користувачів")
                     .style("font-weight", "bold")
 
                 svg.append("text")
@@ -164,14 +164,14 @@ class HistogramMini extends Component {
                     })
                     .style("text-anchor", "middle")
                     .style("font-weight", "bold")
-                    .text("Distance (in Km)")
+                    .text("Відстань (км)")
 
                 svg
                     .append("text")
                     .attr("class", "title")
                     .attr("x", width / 3)
                     .attr("y", -length / margin.top)    // +20 to adjust position (lower)
-                    .text("Trip Distance and Customers")
+                    .text("Відстань та користувачі")
                     .attr("fill", "black")
                     .style("font-weight", "bold")
             })

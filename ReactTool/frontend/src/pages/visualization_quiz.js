@@ -78,7 +78,7 @@ let minivis = [
         'vis': ScatterPlotMini, 
         'type': 'Точкова діаграма (Scatterplot)', 
         'question': 'Існує негативна лінійна залежність між ростом і вагою 85 чоловіків.', 
-        'options': ['True', 'False', "Пропустити"], 
+        'options': ['Вірно', 'Невірно', "Пропустити"], 
         'correct_answer': 1, 
         'cimage': img1 
     },
