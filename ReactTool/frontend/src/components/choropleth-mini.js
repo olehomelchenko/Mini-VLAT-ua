@@ -1,65 +1,122 @@
 import React, { Component } from 'react';
-import * as d3 from 'd3'
+import * as d3 from 'd3';
 import * as topojson from 'topojson';
-import { Container, Col, Row, Navbar, Button, ButtonGroup, ToggleButton, Form, InputGroup } from 'react-bootstrap';
 import '../App.css';
-import data_ua from './data/UKR.json';
+import data_ukr from './data/UKR.json';
 import data from './data/Choropleth.csv';
-import img8 from '../components/data/Mini-VLAT/Choropleth_New.png'
-
-
 
 class ChoroplethMini extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [],
+    };
+  }
 
-    constructor(props) {
-        super(props);
-    }
+  componentDidMount() {
+    d3.csv(data).then(csvData => {
+      this.setState({ data: csvData });
+      this.drawChart(csvData);
+    });
+  }
 
-    componentDidMount() {
-        console.log(String(data_ua))
-        this.drawChart()
-    }
-    divResize(e) {
-        console.log('div was resized', e)
-    }
+  drawChart(csvData) {
+    const width = 800;
+    const height = 600;
 
-    componentDidUpdate() {
-        this.drawChart()
-    }
+    const svg = d3
+      .select("#graph_box")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height);
 
-    drawChart() {
-        //https://www.statista.com/statistics/223675/state-unemployment-rate-in-the-us/
-        //https://bl.ocks.org/wboykinm/dbbe50d1023f90d4e241712395c27fb3
-        var e = document.getElementById("graph_box");
-        const length = Math.min(e.clientHeight, e.clientWidth)
+    const colorScale = d3.scaleSequential(d3.interpolateBlues)
+      .domain([
+        d3.min(csvData, d => +d.value),
+        d3.max(csvData, d => +d.value),
+      ]);
 
-        const margin = { top: length / 5, right: length / 5, bottom: length / 5, left: length / 5 },
-            width = length - margin.left - margin.right,
-            height = length - margin.top - margin.bottom;
+    const projection = d3.geoMercator()
+      .center([31, 49])
+      .scale(3000)
+      .translate([width / 2, height / 2]);
 
-        // append the svg object to the body of the page
-        //d3.select("#graph_box").selectAll("svg").remove();
-        d3.select("#graph_box").select("svg").remove();
-        const svg = d3.select("#graph_box")
-            .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
+    const path = d3.geoPath().projection(projection);
 
-        svg.append("text").attr("class", 'bubbleTitle').text("Рівень безробіття в штатах США у 2020 році").style("font-weight", 'bolder').attr('x', 1.2 * margin.top).attr('y', 0.9 * margin.top).style('font-size', 0.04 * height)
+    const dataMap = csvData.reduce((acc, row) => {
+      acc[row.region] = +row.value;
+      return acc;
+    }, {});
 
-        var image = svg.append('image').attr('width', 1.4 * width).attr('x', 0).attr('y', margin.top * height / width).attr('xlink:href', img8).attr('height', 1.1 * height)
+    const regions = topojson.feature(data_ukr, data_ukr.objects.UKR_adm1).features;
 
-    }
+    regions.forEach(region => {
+      const regionName = region.properties.NAME_1;
+      region.properties.value = dataMap[regionName] || 0;
+    });
 
+    svg
+      .selectAll("path")
+      .data(regions)
+      .enter()
+      .append("path")
+      .attr("d", path)
+      .attr("fill", d => colorScale(d.properties.value))
+      .attr("stroke", "#fff")
+      .attr("stroke-width", 0.5)
+      .append("title") 
+      .text(d => `${d.properties.NAME_1}: ${d.properties.value}`);
 
-    render() {
+    const legendWidth = 300;
+    const legendHeight = 20;
 
-        return (
-            <div id={'graph_box'}>
-            </div>
-        );
-    }
+    const legend = svg
+      .append("g")
+      .attr("transform", `translate(${width - legendWidth - 20}, ${height - 50})`);
+
+    const gradient = svg
+      .append("defs")
+      .append("linearGradient")
+      .attr("id", "legend-gradient")
+      .attr("x1", "0%")
+      .attr("x2", "100%")
+      .attr("y1", "0%")
+      .attr("y2", "0%");
+
+    gradient
+      .append("stop")
+      .attr("offset", "0%")
+      .attr("stop-color", d3.interpolateBlues(0));
+
+    gradient
+      .append("stop")
+      .attr("offset", "100%")
+      .attr("stop-color", d3.interpolateBlues(1));
+
+    legend
+      .append("rect")
+      .attr("width", legendWidth)
+      .attr("height", legendHeight)
+      .style("fill", "url(#legend-gradient)");
+
+    const legendScale = d3.scaleLinear()
+      .domain([
+        d3.min(csvData, d => +d.value),
+        d3.max(csvData, d => +d.value),
+      ])
+      .range([0, legendWidth]);
+
+    const legendAxis = d3.axisBottom(legendScale).ticks(5);
+
+    legend
+      .append("g")
+      .attr("transform", `translate(0, ${legendHeight})`)
+      .call(legendAxis);
+  }
+
+  render() {
+    return <div id="graph_box"></div>;
+  }
 }
 
 export default ChoroplethMini;
