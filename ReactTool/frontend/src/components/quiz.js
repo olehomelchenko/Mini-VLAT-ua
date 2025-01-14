@@ -185,20 +185,14 @@ next.addEventListener('click', () => {
         else if (questionCount === 7) {
             areaChart();
             loadQuestion();
-            document.getElementById("optionC").disabled = false;
-            document.getElementById("optionD").disabled = false;
         }
         else if (questionCount === 8) {
             stackedArea();
             loadQuestion();
-            document.getElementById("optionC").disabled = false;
-            document.getElementById("optionD").disabled = false;
         }
         else if (questionCount === 9) {
             bubbleChart();
             loadQuestion();
-            document.getElementById("optionC").disabled = false;
-            document.getElementById("optionD").disabled = false;
         }
         else if (questionCount === 10) {
             choropleth();
@@ -211,6 +205,10 @@ next.addEventListener('click', () => {
             loadQuestion();
             document.getElementById("optionC").disabled = false;
             document.getElementById("optionD").disabled = false;
+        }
+        else if (questionCount === 12) {
+            StackedBarChartMini();
+            loadQuestion();
         }
         else {
             loadQuestion();
