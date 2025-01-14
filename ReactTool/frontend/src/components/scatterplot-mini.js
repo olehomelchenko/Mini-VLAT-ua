@@ -143,7 +143,7 @@ class ScatterPlotMini extends Component {
                     .attr("class", "title")
                     .attr("x", width / 4)
                     .attr("y", -length / margin.top)    // +20 to adjust position (lower)
-                    .text("Маса та висота 85 осіб")
+                    .text("Маса та зріст 85 осіб")
                     .attr("fill", "black")
                     .style("font-weight", "bold")
 
@@ -159,7 +159,7 @@ class ScatterPlotMini extends Component {
                     })
                     .style("text-anchor", "middle")
                     .style("font-weight", "bold")
-                    .text("Висота (см)")
+                    .text("Зріст (см)")
 
 
             })

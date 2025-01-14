@@ -164,7 +164,7 @@ class AreaChartMini extends Component {
                 .attr("class", "title")
                 .attr("x", width / 3)
                 .attr("y", -length / margin.top)    // +20 to adjust position (lower)
-                .text("Ціна кави Робуста")
+                .text("Ціна зерен кави")
                 .attr("fill", "black")
                 .style("font-weight", "bold")
 

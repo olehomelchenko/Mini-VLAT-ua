@@ -119,7 +119,7 @@ class PieChartMini extends Component {
                 .attr("class", "title")
                 .attr("x", -width / 5.5)
                 .attr("y", -width / 3)    // +20 to adjust position (lower)
-                .text("Світовий ринок смартфонів в 2021")
+                .text("Світовий ринок смартфонів у 2021")
                 .attr("fill", "black")
                 .style("font-weight", "bold")
 

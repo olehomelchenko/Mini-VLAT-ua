@@ -349,7 +349,7 @@ class StackedAreaPlotMini extends Component {
                         }
                     })
                     .attr("y", -length / margin.top)    // +20 to adjust position (lower)
-                    .text("Популярні жіночі імена в Великій Британії")
+                    .text("Популярні жіночі імена у Великій Британії")
                     .attr("fill", "black")
                     .style("font-weight", "bold")
             })

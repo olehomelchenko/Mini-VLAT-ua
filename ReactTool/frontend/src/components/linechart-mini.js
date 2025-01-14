@@ -218,7 +218,7 @@ class LineChartMini extends Component {
                 .attr("x", 0 - (height / 1.9))
                 .attr("dy", "1em")
                 .style("text-anchor", "middle")
-                .text("Ціна на нафту ($)")
+                .text("Ціна нафти ($)")
                 .style("font-weight", "bold")
 
             svg
@@ -226,7 +226,7 @@ class LineChartMini extends Component {
                 .attr("class", "title")
                 .attr("x", width / 2.5)
                 .attr("y", -length / margin.top)    // +20 to adjust position (lower)
-                .text("Ціни на нафту в 2020")
+                .text("Ціна нафти в 2020 році")
                 .attr("fill", "black")
                 .style("font-weight", "bold")
 

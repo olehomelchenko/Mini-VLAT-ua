@@ -37,24 +37,32 @@ let minivis = [
     { 
         'vis': LineChartMini, 
         'type': 'Лінійна діаграма', 
-        'question': 'Яким був ціновий діапазон бареля нафти у 2020 році?', 
-        'options': ["$16.55 - $57.52", "$19.52 - $59.00", "$23.43 - $60.72", "$21.82 - $87.52", "Пропустити"], 
+        'question': 'Якою була ціна нафти в лютому 2020 року?', 
+        'options': ["Велика Британія","США","Японія","Австралія", "Пропустити"], 
         'correct_answer': 0, 
         'cimage': img12 
     },
     { 
+        'vis': StackedBarChartMini, 
+        'type': 'Накопичувальна відносна стовпчикова діаграма', 
+        'question': 'У якої країни найменша частка золотих медалей?', 
+        'options': ["$16.55 - $57.52", "$19.52 - $59.00", "$23.43 - $60.72", "$21.82 - $87.52", "Пропустити"], 
+        'correct_answer': 0, 
+        'cimage': img5 
+    },
+    { 
         'vis': BarChartMini, 
         'type': 'Стовпчикова діаграма (Bar Chart)', 
-        'question': 'Який діапазон середньої швидкості інтернету в Азії?', 
-        'options': ["5.50Mbps - 30.60Mbps", "7.00Mbps - 29.40Mbps", "6.40Mbps - 27.38Mbps", "5.50Mbps - 28.60Mbps", "Пропустити"], 
-        'correct_answer': 3, 
+        'question': 'Яка середня швидкість інтернету в Японії?', 
+        'options': ["42.30 Mbps", "40.51 Mbps", "35.25 Mbps", " 16.6 Mbps", "Пропустити"], 
+        'correct_answer': 1, 
         'cimage': img9 
     },
     { 
         'vis': StackedBarChart2Mini, 
         'type': 'Накопичувальна стовпчикова діаграма (Stacked Bar)', 
-        'question': 'Яка ціна арахісу в Лас Веґасі?', 
-        'options': ["$9.0", "$6.1", "$10.3", "$4.3", "Пропустити"], 
+        'question': 'Яка ціна арахісу в Сеулі?', 
+        'options': ["$5.2", "$6.1", "$7.5", "$4.5", "Пропустити"], 
         'correct_answer': 1, 
         'cimage': img2 
     },
@@ -62,64 +70,64 @@ let minivis = [
         'vis': PieChartMini, 
         'type': 'Кругова діаграма (Pie Chart)', 
         'question': 'Яку приблизно частку ринку смартфонів займає Samsung?', 
-        'options': ["20%", "25%", "30%", "15%", "Пропустити"], 
-        'correct_answer': 1, 
+        'options': ["17.6%", "25.3%", "10.9%", "35.2%", "Пропустити"], 
+        'correct_answer': 0, 
         'cimage': img11 
     },
     { 
         'vis': HistogramMini, 
         'type': 'Гістограма (Histogram)', 
-        'question': 'Скільки людей оцінили таксі рейтингом між 4.2 та 4.4?', 
-        'options': ["270", "190", "300", "290", "Пропустити"], 
+        'question': 'На яку відстань переважно пересувалися користувачі таксі', 
+        'options': ["60-70 км", "30-40 км", "20-30 км","50-60 км", "Пропустити"], 
         'correct_answer': 1, 
         'cimage': img6 
     },
     { 
         'vis': ScatterPlotMini, 
         'type': 'Точкова діаграма (Scatterplot)', 
-        'question': 'Існує негативна лінійна залежність між ростом і вагою 85 чоловіків.', 
-        'options': ['Вірно', 'Невірно', "Пропустити"], 
-        'correct_answer': 1, 
+        'question': "Існує негативний зв'язок між зростом і масою 85 осіб.", 
+        'options': ['Правда', 'Хиба', "Пропустити"], 
+        'correct_answer': 0, 
         'cimage': img1 
     },
     { 
         'vis': AreaChartMini, 
         'type': 'Площинна діаграма (Area Chart)', 
-        'question': 'Якою була середня ціна фунту кавових бобів в вересні 2013?', 
-        'options': ["$5.15", "$6.2", "$4.8", "$4.3", "Пропустити"], 
+        'question': 'Якою була середня ціна фунту кавових бобів у вересні 2019?', 
+        'options': ["$0.71", "$0.90", "$0.80", "$0.63", "Пропустити"], 
         'correct_answer': 0, 
         'cimage': img10 
     },
     {
         'vis': StackedAreaPlotMini, 
         'type': 'Накопичувальна площинна діаграма (Stacked Area)', 
-        'question': 'Яку кількість дівчаток назвали «Олівія» у 2010 році у Великобританії?', 
-        'options': ["2000", "2500", "1700", "2400", "Пропустити"], 
-        'correct_answer': 2, 
+        'question': 'Яким було співвідношення дівчаток, названих «Ісла», до дівчаток, названих «Амелія», у 2012 році у Великій Британії?', 
+        'options': ["1 до 1","1 до 2","1 до 3","1 до 4", "Пропустити"], 
+        'correct_answer': 1, 
         'cimage': img7 
     },
     { 
         'vis': BubbleChartMini, 
         'type': 'Бульбашкова діаграма (Bubble Chart)', 
-        'question': 'Яка загальна протяжність системи метро в Пекіні?', 
-        'options': ["525 км", "495 км", "305 км", "475 км", "Пропустити"], 
-        'correct_answer': 0, 
+        'question': 'У метрополітену якого міста найбільша кількість станцій?', 
+        'options': ["Пекін", "Шанхай", "Лондон", "Сеул", "Пропустити"], 
+        'correct_answer': 1, 
         'cimage': img3 
     },
     { 
         'vis': ChoroplethMini, 
         'type': 'Хороплетна мапа (Choropleth)', 
-        'question': 'У 2015 році рівень безробіття у Вашингтоні (WA) був вищим, ніж у Вісконсині (WI).', 
-        'options': ['Вірно', 'Невірно', "Пропустити"], 
+        'question': 'Станом на 2021 рік, населення Харківської області переважало чисельністю населення Львівської області"', 
+        'options': ['Правда', 'Хиба', "Пропустити"], 
         'correct_answer': 0, 
         'cimage': img8 
     },
     { 
         'vis': TreeMapMini, 
         'type': 'Деревоподібна діаграма (Treemap)', 
-        'question': 'Для якого сайту кількість унікальних відвідувачів була найбільшою в 2010 році?', 
-        'options': ["Amazon", "Chase", "PayPal", "Citibank", "Пропустити"], 
-        'correct_answer': 3, 
+        'question': 'eBay входить до категорії «Програмне забезпечення».', 
+        'options': ['Правда', 'Хиба', "Пропустити"], 
+        'correct_answer': 1, 
         'cimage': img4 
     }
 ];
@@ -219,13 +227,13 @@ class VisQuiz extends Component {
         score_2 = this.state.mini_score
 
         if (response === minivis[this.state.current_mini_index]['options'][truth]) {
-            record_ques[type] = '✅ Вірно'
+            record_ques[type] = '✅ Правильно'
         }
         else if (response === 'Skip') {
             record_ques[type] = '⏩ Пропущено'
         }
         else {
-            record_ques[type] = '❌ Невірно'
+            record_ques[type] = '❌ Неправильно'
         }
         console.log("The dictionary is: ", record_ques)
     }
@@ -288,7 +296,7 @@ class VisQuiz extends Component {
         this.props.history.push(pageType)
     }
     timeout() {
-        alert('Чакс вийшов! Натисніть "ОК" щоб перейти до наступного запитання.')
+        alert('Час вийшов! Натисніть "ОК" щоб перейти до наступного запитання.')
         this.setState({
             current_visualization_index: this.state.current_visualization_index + 1,
         })
@@ -297,7 +305,7 @@ class VisQuiz extends Component {
         return Math.random();
     }
     minitimeout() {
-        alert('Чакс вийшов! Натисніть "ОК" щоб перейти до наступного запитання.')
+        alert('Час вийшов! Натисніть "ОК" щоб перейти до наступного запитання.')
         this.setState({
             current_mini_index: this.state.current_mini_index + 1,
         })

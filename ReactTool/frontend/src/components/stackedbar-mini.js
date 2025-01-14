@@ -187,7 +187,7 @@ class StackedBarChart2Mini extends Component {
                     })
                     .style("text-anchor", "middle")
                     .style("font-weight", "bold")
-                    .text("Міста")
+                    .text("Місто")
 
                 var dataNormalized = []
                 data.forEach(function (d) {
@@ -473,7 +473,7 @@ class StackedBarChart2Mini extends Component {
                     .attr("class", "title")
                     .attr("x", width / 3)
                     .attr("y", -length / margin.top)    // +20 to adjust position (lower)
-                    .text("Вартість обслуговування номера")
+                    .text("Вартість товарів у готелі")
                     .attr("fill", "black")
                     .style("font-weight", "bold")
             })

@@ -3,7 +3,7 @@ import * as d3 from 'd3'
 import * as topojson from 'topojson';
 import { Container, Col, Row, Navbar, Button, ButtonGroup, ToggleButton, Form, InputGroup } from 'react-bootstrap';
 import '../App.css';
-import data_usa from './data/USA.json';
+import data_ua from './data/UKR.json';
 import data from './data/Choropleth.csv';
 import img8 from '../components/data/Mini-VLAT/Choropleth_New.png'
 
@@ -16,7 +16,7 @@ class ChoroplethMini extends Component {
     }
 
     componentDidMount() {
-        console.log(String(data_usa))
+        console.log(String(data_ua))
         this.drawChart()
     }
     divResize(e) {
