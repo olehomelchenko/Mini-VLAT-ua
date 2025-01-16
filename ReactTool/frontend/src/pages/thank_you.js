@@ -6,7 +6,6 @@ import { record_ques } from './visualization_quiz';
 
 class ThankYou extends Component {
 
-
     constructor(props) {
         super(props)
     }
@@ -24,8 +23,8 @@ class ThankYou extends Component {
             <table style={{ borderCollapse: 'collapse', margin: 'auto' }}>
                 <thead>
                     <tr>
-                        <th style={{ border: '1px solid black', padding: '5px' }}>Question</th>
-                        <th style={{ border: '1px solid black', padding: '5px' }}>Result</th>
+                        <th style={{ border: '1px solid black', padding: '5px' }}>Запитання</th>
+                        <th style={{ border: '1px solid black', padding: '5px' }}>Результат</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,7 +32,7 @@ class ThankYou extends Component {
                         <tr key={question}>
                             <td style={{ border: '1px solid black', padding: '5px' }}>{question}</td>
                             <td style={{ border: '1px solid black', padding: '5px' }}>
-                                {answer === 'Correct' ? <span>&#10004;</span> : answer === 'Wrong' ? <span>&#10060;</span> : answer}
+                                {answer === 'Вірно' ? <span>&#10004;</span> : answer === 'Невірно' ? <span>&#10060;</span> : answer}
                             </td>
                         </tr>
                     ))}
@@ -48,17 +47,17 @@ class ThankYou extends Component {
         console.log("The values of the dictionary is: " + Object.values(record_ques))
 
         if (this.props.location.state == null) {
-            return (<p>Unknown session. Please start from the <a href={'#/'}> consent page</a></p>)
+            return (<p>Невизначена сесія. Будь ласка поверніться на <a href={'/'}> сторінку згоди</a></p>)
         }
 
         if (this.state == null) {
-            return (<p>Loading...</p>)
+            return (<p>Завантаження...</p>)
         }
 
         return (
             <Row className={'justify-content-center no-margin-row'}>
                 <Col lg={6} className={'text-box text-justify'}>
-                    <h3 style={{ marginBottom: '20px' }}>You scored {score_2} out of 12. Thank you for participating in our study. Your responses have been recorded.</h3>
+                    <h3 style={{ marginBottom: '20px' }}>Ваш результат: {score_2} із 12. Дякую за те що взяли участь в дослідженні. Ваші відповіді були збережені.</h3>
                     {this.renderTable()}
                 </Col>
             </Row>

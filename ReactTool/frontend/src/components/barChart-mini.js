@@ -131,14 +131,14 @@ class BarChartMini extends Component {
                     .attr("x", 0 - (height / 1.9))
                     .attr("dy", "1em")
                     .style("text-anchor", "middle")
-                    .text("Internet Speed (Mbps)")
+                    .text("Швидкість інтернету (Mbps)")
                     .style("font-weight", "bold")
 
                 svg
                     .append("text")
                     .attr("x", width / 4)
                     .attr("y", -3 * length / margin.top)    // +20 to adjust position (lower)
-                    .text("Global Internet Speed (Mbps)")
+                    .text("Швидкість інтернету у світі (Mbps)")
                     .attr("class", "title")
                     .attr("fill", "black")
                     .style("font-weight", "bold")

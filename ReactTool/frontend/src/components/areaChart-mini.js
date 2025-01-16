@@ -6,7 +6,18 @@ import '../App.css';
 import data from './data/AreaChart-2.csv';
 import img10 from '../components/data/Mini-VLAT/AreaChart.png'
 
+const ukLocale = {
+    "dateTime": "%A, %e %B %Y р. %X",
+    "date": "%d.%m.%Y",
+    "time": "%H:%M:%S",
+    "periods": ["AM", "PM"],
+    "days": ["неділя", "понеділок", "вівторок", "середа", "четвер", "п'ятниця", "субота"],
+    "shortDays": ["нд", "пн", "вт", "ср", "чт", "пт", "сб"],
+    "months": ["січень", "лютий", "березень", "квітень", "травень", "червень", "липень", "серпень", "вересень", "жовтень", "листопад", "грудень"],
+    "shortMonths": ["січ", "лют", "бер", "кві", "тра", "чер", "лип", "сер", "вер", "жов", "лис", "гру"]
+};
 
+const formatUk = d3.timeFormatLocale(ukLocale).format("%b %Y");
 
 class AreaChartMini extends Component {
 
@@ -43,7 +54,7 @@ class AreaChartMini extends Component {
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
                 .append("g")
-            svg.append("text").attr("class", 'bubbleTitle').text("Average Coffee Bean Price from 2013 to 2014").style("font-weight", 'bolder').attr('x', 1.2 * margin.top).attr('y', 1.2 * margin.top).style('font-size', 0.04 * height)
+            svg.append("text").attr("class", 'bubbleTitle').text("Середня ціна кавових бобів з 2013 по 2014").style("font-weight", 'bolder').attr('x', 1.2 * margin.top).attr('y', 1.2 * margin.top).style('font-size', 0.04 * height)
 
             var image = svg.append('image').attr('width', 1.2 * width).attr('x', 0).attr('y', margin.top * height / width).attr('xlink:href', img10).attr('height', 1.1 * height)
 
@@ -73,7 +84,7 @@ class AreaChartMini extends Component {
             svg.append("g")
                 .attr("class", "x-axis")
                 .attr("transform", `translate(0, ${height})`)
-                .call(d3.axisBottom(xScale))
+                .call(d3.axisBottom(xScale).tickFormat(formatUk))
 
             var yScale = d3.scaleLinear()
                 .domain([0.5, 0.9])
@@ -120,7 +131,7 @@ class AreaChartMini extends Component {
                 .attr("x", 0 - (height / 1.9))
                 .attr("dy", "1em")
                 .style("text-anchor", "middle")
-                .text("Coffee Price ($/lb)")
+                .text("Ціна ($/фунт)")
                 .style("font-weight", "bold")
 
             function make_x_gridlines() {
@@ -153,7 +164,7 @@ class AreaChartMini extends Component {
                 .attr("class", "title")
                 .attr("x", width / 3)
                 .attr("y", -length / margin.top)    // +20 to adjust position (lower)
-                .text("Robusta Coffee Price")
+                .text("Ціна кави Робуста")
                 .attr("fill", "black")
                 .style("font-weight", "bold")
 

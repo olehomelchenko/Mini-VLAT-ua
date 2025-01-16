@@ -5,6 +5,18 @@ import { Container, Col, Row, Navbar, Button, ButtonGroup, ToggleButton, Form, I
 import '../App.css';
 import img12 from '../components/data/Mini-VLAT/LineChart.png';
 
+const ukLocale = {
+    "dateTime": "%A, %e %B %Y р. %X",
+    "date": "%d.%m.%Y",
+    "time": "%H:%M:%S",
+    "periods": ["AM", "PM"],
+    "days": ["неділя", "понеділок", "вівторок", "середа", "четвер", "п'ятниця", "субота"],
+    "shortDays": ["нд", "пн", "вт", "ср", "чт", "пт", "сб"],
+    "months": ["січень", "лютий", "березень", "квітень", "травень", "червень", "липень", "серпень", "вересень", "жовтень", "листопад", "грудень"],
+    "shortMonths": ["січ", "лют", "бер", "кві", "тра", "чер", "лип", "сер", "вер", "жов", "лис", "гру"]
+};
+
+const formatUk = d3.timeFormatLocale(ukLocale).format("%B");
 
 class LineChartMini extends Component {
 
@@ -72,7 +84,7 @@ class LineChartMini extends Component {
             svg.append("g")
                 //.attr("class", "axis")
                 .attr("transform", `translate(0, ${height})`)
-                .call(d3.axisBottom(xScale).tickFormat(d3.timeFormat("%B")))
+                .call(d3.axisBottom(xScale).tickFormat(formatUk))
                 /*
                 .style("font-size", function() {
                     if (length < 700){
@@ -206,7 +218,7 @@ class LineChartMini extends Component {
                 .attr("x", 0 - (height / 1.9))
                 .attr("dy", "1em")
                 .style("text-anchor", "middle")
-                .text("Oil Price ($)")
+                .text("Ціна на нафту ($)")
                 .style("font-weight", "bold")
 
             svg
@@ -214,7 +226,7 @@ class LineChartMini extends Component {
                 .attr("class", "title")
                 .attr("x", width / 2.5)
                 .attr("y", -length / margin.top)    // +20 to adjust position (lower)
-                .text("Oil Prices in 2020")
+                .text("Ціни на нафту в 2020")
                 .attr("fill", "black")
                 .style("font-weight", "bold")
 
@@ -233,7 +245,7 @@ class LineChartMini extends Component {
                 })
                 .style("text-anchor", "middle")
                 .style("font-weight", "bold")
-                .text("Month")
+                .text("Місяць")
 
 
         }

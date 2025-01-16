@@ -31,7 +31,7 @@ class Tutorial extends Component {
 
     componentDidMount() {
 
-        fetch('./new_session_id', {
+        fetch(`${process.env.REACT_APP_API_URL}/new_session_id`, {
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
             method: 'POST',
             body: JSON.stringify({
@@ -54,7 +54,7 @@ class Tutorial extends Component {
     render() {
 
         if (this.props.location.state == null) {
-            return (<p>Unknown session. Please start from the <a href={'#/'}> consent page</a></p>)
+            return (<p>Невизначена сесія. Будь ласка поверніться на <a href={'/'}> сторінку згоди</a></p>)
         }
 
         return (
@@ -62,20 +62,24 @@ class Tutorial extends Component {
                 <Row className={'justify-content-center tutorial-body'}>
                     <Col lg={6} className={'text-box text-justify'}>
 
-                        <p className='head_1'>Intructions</p>
+                        <p className='head_1'>Інструкції</p>
                         <ul>
-                            <li className='int_1'>You will be given 12 multiple-choice questions</li>
-                            <li className='int_1'>Answer to the best of your ability. If you are unsure,you may skip the questions instead of guessing.</li>
-                            {/* <li className='int_1'>Please do not take this test if you are color blind. Here is a link to a separate test: <a href='https://colormax.org/color-blind-test/' target="_blank">https://colormax.org/color-blind-test/</a></li> */}
-                            {/* <li>We will store information about your mouse interaction (e.g. what you clicked) when answering the survey questions.</li> */}
+                            <li className='int_1'>
+                                Вам буде запропоновано 12 питань з вибором однієї правильної відповіді.</li>
+                            <li className='int_1'>
+                                Дайте на них відповідь, якщо ви впевнені в своїй відповіді. Якщо ви не впевнені, ви можете пропустити питання, а не вгадувати.
+                                </li>
 
                         </ul>
-                        <p className='head_2'><b>Important: You will have 25 seconds to answer each question.</b> Answer to the best of your ability. You may <b>skip the questions instead of guessing</b> if you are unsure.</p>
+                        <p className='head_2'>
+                            <b>Важливо: на відповідь до кожного питання ви маєте 25 секунд.</b>
+                            Відповідайте на кожне питання якнайкраще. Якщо ви не впевнені, ви можете <b>пропустити питання, а не вгадувати</b>.
+                            </p>
 
                         <div className={'text-center'}>
                             <Button onClick={this.on_experiment_click.bind(this)}
                                 className={'btn-sm'} variant={"success"}>
-                                Start the experiment.
+                                Розпочати
                             </Button>
                         </div>
 

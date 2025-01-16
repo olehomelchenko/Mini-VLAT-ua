@@ -172,7 +172,7 @@ class StackedBarChart2Mini extends Component {
                     .attr("x", - (height / 1.9))
                     .attr("dy", "1em")
                     .style("text-anchor", "middle")
-                    .text("Cost ($)")
+                    .text("Ціна ($)")
                     .style("font-weight", "bold")
 
                 svg.append("text")
@@ -187,7 +187,7 @@ class StackedBarChart2Mini extends Component {
                     })
                     .style("text-anchor", "middle")
                     .style("font-weight", "bold")
-                    .text("Cities")
+                    .text("Міста")
 
                 var dataNormalized = []
                 data.forEach(function (d) {
@@ -339,7 +339,7 @@ class StackedBarChart2Mini extends Component {
                     .attr("fill", "#7fc97f")
 
                 svg.append("text")
-                    .text("Vodka")
+                    .text("Горілка")
                     .attr("x", function () {
                         if (width < 500 && width > 400) {
                             return width + (5 * width / margin.left)
@@ -365,7 +365,7 @@ class StackedBarChart2Mini extends Component {
                     .attr("class", "legend-value")
 
                 svg.append("text")
-                    .text("Soda")
+                    .text("Содова")
                     .attr("x", function () {
                         if (width < 500 && width > 400) {
                             return width + (5 * width / margin.left)
@@ -391,7 +391,7 @@ class StackedBarChart2Mini extends Component {
                     .attr("class", "legend-value")
 
                 svg.append("text")
-                    .text("Peanut")
+                    .text("Арахіс")
                     .attr("x", function () {
                         if (width < 500 && width > 400) {
                             return width + (5 * width / margin.left)
@@ -417,7 +417,7 @@ class StackedBarChart2Mini extends Component {
                     .attr("class", "legend-value")
 
                 svg.append("text")
-                    .text("Water")
+                    .text("Вода")
                     .attr("x", function () {
                         if (width < 500 && width > 400) {
                             return width + (5 * width / margin.left)
@@ -443,7 +443,7 @@ class StackedBarChart2Mini extends Component {
                     .attr("class", "legend-value")
 
                 svg.append("text")
-                    .text("Sandwich")
+                    .text("Сендвіч")
                     .attr("x", function () {
                         if (width < 500 && width > 400) {
                             return width + (5 * width / margin.left)
@@ -473,7 +473,7 @@ class StackedBarChart2Mini extends Component {
                     .attr("class", "title")
                     .attr("x", width / 3)
                     .attr("y", -length / margin.top)    // +20 to adjust position (lower)
-                    .text("Room Service Prices")
+                    .text("Вартість обслуговування номера")
                     .attr("fill", "black")
                     .style("font-weight", "bold")
             })

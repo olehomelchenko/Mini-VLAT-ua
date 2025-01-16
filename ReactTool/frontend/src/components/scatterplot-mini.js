@@ -135,7 +135,7 @@ class ScatterPlotMini extends Component {
                     .attr("x", 0 - (height / 1.9))
                     .attr("dy", "1em")
                     .style("text-anchor", "middle")
-                    .text("Weight (kg)")
+                    .text("Маса (кг)")
                     .style("font-weight", "bold")
 
                 svg
@@ -143,7 +143,7 @@ class ScatterPlotMini extends Component {
                     .attr("class", "title")
                     .attr("x", width / 4)
                     .attr("y", -length / margin.top)    // +20 to adjust position (lower)
-                    .text("Weight and Height of 85 Individuals")
+                    .text("Маса та висота 85 осіб")
                     .attr("fill", "black")
                     .style("font-weight", "bold")
 
@@ -159,7 +159,7 @@ class ScatterPlotMini extends Component {
                     })
                     .style("text-anchor", "middle")
                     .style("font-weight", "bold")
-                    .text("Height (cm)")
+                    .text("Висота (см)")
 
 
             })
